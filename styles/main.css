@@ -20,11 +20,23 @@ video {
 	display: none;
 }
 
+html{
+
+    background: url("../images/fondo.jpeg") #fff no-repeat center center fixed;
+    max-height:100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #container {
+
+
 
 }
 
-#content {
+#cuadro_camara {
 	position: absolute;
 	left: 0;
 	right: 0;

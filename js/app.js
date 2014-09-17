@@ -6,26 +6,27 @@
 
 	window.hotSpots = [];
 
-	var content = $('#content');
+	var content = $('#cuadro_camara');
 	var video = $('#webcam')[0];
 	var canvases = $('canvas');
 
 	var resize = function () {
 		var ratio = video.width / video.height;
 		var w = $(this).width();
-		var h = $(this).height() - 110;
+		var h = $(this).height() ;
 
 		if (content.width() > w) {
-			content.width(w);
-			content.height(w / ratio);
+			content.width(320);
+			content.height(240);
 		} else {
-			content.height(h);
-			content.width(h * ratio);
+			content.height(240);
+			content.width(320);
 		}
+
 		canvases.width(content.width());
 		canvases.height(content.height());
-		content.css('left', (w - content.width()) / 2);
-		content.css('top', ((h - content.height()) / 2) + 55);
+		content.css('left', (w - content.width())-20);
+		content.css('top',  55);
 	}
 	$(window).resize(resize);
 	$(window).ready(function () {
@@ -105,7 +106,7 @@
 	function start() {
 		$('.loading').fadeOut();
 		$('#hotSpots').fadeIn();
-		$('body').addClass('black-background');
+		//$('body').addClass('black-background');
 		$(".instructions").delay(600).fadeIn();
 		$(canvasSource).delay(600).fadeIn();
 		$(canvasBlended).delay(600).fadeIn();

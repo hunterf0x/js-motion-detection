@@ -17,7 +17,7 @@
 	// examples for id usage
 	$('#one').on('motion', function(){
 		console.log('touched one');
-	});
+    });
 
 	$('#another').on('motion', function(){
 		console.log('another');

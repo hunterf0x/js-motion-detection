@@ -19,11 +19,11 @@
         </div>
     </div>
 
-    <div id="content">
+    <div id="cuadro_camara">
 
-        <video id="webcam" autoplay width="640" height="480"></video>
+        <video id="webcam" autoplay width="320" height="240"></video>
 
-        <video id="video-demo" controls="controls" poster="videos/jsdetection.jpg" width="640" height="480"
+        <video id="video-demo" controls="controls" poster="videos/jsdetection.jpg" width="320" height="240"
                onclick="if(/Android/.test(navigator.userAgent))this.play();">
             <source src="videos/jsdetection.mp4" type="video/mp4"/>
             <source src="videos/jsdetection.ogg" type="video/ogg"/>
@@ -31,9 +31,9 @@
             Your browser doesn't support the HTML5 video tag.
         </video>
 
-        <canvas id="canvas-source" width="640" height="480"></canvas>
-        <canvas id="canvas-highlights" width="640" height="480"></canvas>
-        <canvas id="canvas-blended" width="640" height="480"></canvas>
+        <canvas id="canvas-source" width="320" height="240"></canvas>
+        <canvas id="canvas-highlights" width="320" height="240"></canvas>
+        <canvas id="canvas-blended" width="320" height="240"></canvas>
 
         <div id="hotSpots">
             <div id="one"></div>
@@ -46,7 +46,7 @@
 
     <div class="loading">Loading assets...</div>
 
-    <div class="backFromVideo"><a href="#">Back<a/></div>
+    <div class="backFromVideo"><a href="#">Back</a></div>
 
     <div class="introduction">
         <p>This demo lets you control stuff using motion detection in your browser.</p>
