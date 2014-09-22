@@ -110,7 +110,7 @@
 		$(".instructions").delay(600).fadeIn();
 		$(canvasSource).delay(600).fadeIn();
 		$(canvasBlended).delay(600).fadeIn();
-		$('#canvas-highlights').delay(600).fadeIn();
+		//$('#canvas-highlights').delay(600).fadeIn();
 		$(window).trigger('start');
 		update();
 	}
@@ -195,7 +195,7 @@
 		var data;
 		for (var h = 0; h < hotSpots.length; h++) {
 			var blendedData = contextBlended.getImageData(hotSpots[h].x, hotSpots[h].y, hotSpots[h].width, hotSpots[h].height);
-			var i = 0;
+            var i = 0;
 			var average = 0;
 			while (i < (blendedData.data.length * 0.25)) {
 				// make an average between the color channel
@@ -206,7 +206,7 @@
 			average = Math.round(average / (blendedData.data.length * 0.25));
 			if (average > 10) {
 				// over a small limit, consider that a movement is detected
-				data = {confidence: average, spot: hotSpots[h]};
+				data = {confidence: average, spot: hotSpots[h], ready: true};
 				$(data.spot.el).trigger('motion', data);
 			}
 		}
@@ -232,6 +232,7 @@
 		var canvas = $("#canvas-highlights")[0];
 		var ctx = canvas.getContext('2d');
 		canvas.width = canvas.width;
+
 		hotSpots.forEach(function (o, i) {
 			ctx.strokeStyle = 'rgba(0,255,0,0.6)';
 			ctx.lineWidth = 1;
