@@ -221,7 +221,7 @@ html{
 }
 
 #pinata {
-    background: transparent url(images/pinata_stand.png) 0 0 no-repeat;
+    background: transparent url(../images/pinata_stand.png) 0 0 no-repeat;
     position: absolute;
     top: 0px;
     left: 30%;
@@ -231,7 +231,7 @@ html{
     /*cursor: pointer;*/
 }
 #pinata_mov {
-    background: transparent url(images/pinata_mov.png) 0 0 no-repeat;
+    background: transparent url(../images/pinata_mov.png) 0 0 no-repeat;
     position: absolute;
     top: 0px;
     left: 30%;
@@ -242,7 +242,7 @@ html{
     /*cursor: pointer;*/
 }
 #pinata_fin {
-    background: transparent url(images/fin.png) 0 0 no-repeat;
+    background: transparent url(../images/fin.png) 0 0 no-repeat;
     position: absolute;
     top: 0px;
     left: 30%;
@@ -253,7 +253,7 @@ html{
     /*cursor: pointer;*/
 }
 #golpe{
-    background: transparent url(images/pow.png) 0 0 no-repeat;
+    background: transparent url(../images/pow.png) 0 0 no-repeat;
     position: absolute;
     top: 80px;
     left: 45%;
