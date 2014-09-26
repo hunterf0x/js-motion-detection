@@ -1,11 +1,15 @@
 (function(){
-    var cnt =0;
+
     var pow = $('#golpe');
+    var $cnt = 0;
+    var $cnt2 = 0;
+    var cierre = true;
+    var enmovimiento = false;
 	// consider using a debounce utility if you get too many consecutive events
 	$(window).on('motion', function(ev, data){
-        cnt++;
 
 
+        $cnt+=1;
         playSound(data);
         //console.log(data);
 
@@ -40,21 +44,56 @@
 
 
     function playSound(obj) {
-        if (!obj.ready) return;
+        if (!obj.ready) return false;
+
+
 
         obj.ready = false;
         // throttle the note
-        setTimeout(setNoteReady, 400, obj);
-        if(cnt>1)
-            if(pow.attr('display','none'))
-                pow.css('display','block');
-        cnt=1;
+
+
+
+        if($cnt>1){
+
+            if(cierre){
+                pow.show();
+                cierre = false;
+                $cnt2 += 1;
+            }
+
+
+
+
+            if(enmovimiento == false){
+                $('#pinata').hide();
+                $('#pinata_mov').show();
+                enmovimiento = true;
+            }
+
+            if($cnt2 >=8 ){
+                $('#pinata_mov').hide();
+                $('#pinata_fin').show();
+            }
+
+
+        }
+
+        setTimeout(setNoteReady, 500, obj);
+
+
+
+
+
+        console.log($cnt2);
+
+
     }
 
     function setNoteReady(obj) {
         obj.ready = true;
+        cierre =  true;
+        pow.hide();
 
-        pow.css('display','none');
 
     }
 

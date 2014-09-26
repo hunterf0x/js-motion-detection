@@ -11,21 +11,45 @@
 
         (function($) {
             $(document).ready(function() {
-                $('#bird').sprite({fps: 4, no_of_frames: 3});
+                $('#pinata').sprite({fps: 8, no_of_frames: 8});
+                $('#pinata_mov').sprite({fps: 16, no_of_frames: 16});
+                $('#pinata_fin').sprite({fps: 4, no_of_frames: 4});
             });
 
         })(jQuery);
 
     </script>
     <style>
-        #bird {
-            background: transparent url(images/pinata.png) 0 0 no-repeat;
+        #pinata {
+            background: transparent url(images/pinata_stand.png) 0 0 no-repeat;
             position: absolute;
             top: 0px;
             left: 30%;
             width: 600px;
             height: 600px;
             z-index: 2000;
+            /*cursor: pointer;*/
+        }
+        #pinata_mov {
+            background: transparent url(images/pinata_mov.png) 0 0 no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 30%;
+            width: 600px;
+            height: 600px;
+            z-index: 2000;
+            display: none;
+            /*cursor: pointer;*/
+        }
+        #pinata_fin {
+            background: transparent url(images/fin.png) 0 0 no-repeat;
+            position: absolute;
+            top: 0px;
+            left: 30%;
+            width: 600px;
+            height: 600px;
+            z-index: 2000;
+            display: none;
             /*cursor: pointer;*/
         }
         #golpe{
@@ -41,7 +65,9 @@
     </style>
 </head>
 <body>
-<div id="bird"></div>
+<div id="pinata"></div>
+<div id="pinata_mov"></div>
+<div id="pinata_fin"></div>
 <div id="golpe"></div>
 <div id="container">
 
