@@ -207,11 +207,11 @@ html{
 }
 
 #another {
-	width: 1%;
-	height: 1%;
+	width: 3%;
+	height: 3%;
 	top: 10%;
 	left: 50%;
-	margin-left: -1%;
+	margin-left: -3%;
 }
 
 .link {
