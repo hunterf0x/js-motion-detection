@@ -219,3 +219,46 @@ html{
 	color: #fff;
 	padding: .5%;
 }
+
+#pinata {
+    background: transparent url(images/pinata_stand.png) 0 0 no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    z-index: 2000;
+    /*cursor: pointer;*/
+}
+#pinata_mov {
+    background: transparent url(images/pinata_mov.png) 0 0 no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    z-index: 2000;
+    display: none;
+    /*cursor: pointer;*/
+}
+#pinata_fin {
+    background: transparent url(images/fin.png) 0 0 no-repeat;
+    position: absolute;
+    top: 0px;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    z-index: 2000;
+    display: none;
+    /*cursor: pointer;*/
+}
+#golpe{
+    background: transparent url(images/pow.png) 0 0 no-repeat;
+    position: absolute;
+    top: 80px;
+    left: 45%;
+    width: 376px;
+    height: 271px;
+    z-index: 2000;
+    display: none;
+}
