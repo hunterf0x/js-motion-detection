@@ -2,21 +2,79 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Home Cumpleaños - Webcam</title>
+    <title>Home Cumpleaños - Desktop</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css"/>
     <link id="favicon" rel="icon" type="image/ico" sizes="16x16" href="images/favicon.ico">
     <link id="favicon2x" rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript">
+        var enmovimiento = false;
+        var cnt_golpes = 0;
+        var fuerzaGolpe = 5;
         (function($) {
             $(document).ready(function() {
                 $('#pinata').sprite({fps: 8, no_of_frames: 8});
                 $('#pinata_mov').sprite({fps: 16, no_of_frames: 16});
                 $('#pinata_fin').sprite({fps: 4, no_of_frames: 4});
+
+                $('#pinata').on('click',function(){
+                    mover();
+                });
+
+                $('#pinata_mov').on('click',function(){
+                    if(cnt_golpes < 3)
+                        golpear();
+                    else
+                        final();
+                });
+
+
             });
 
+            var mover = function() {
+                if(enmovimiento== true) return false;
+                $('#pinata').hide();
+                $('#pinata_mov').show();
+                $('#golpe').show();
+                enmovimiento = true;
+                setTimeout(function(){
+                    quitarPow();
+                }, 250);
+            };
+
+
+            var golpear = function(){
+                cnt_golpes++;
+                sprite_golpe();
+                $('#golpe').show();
+                setTimeout(function(){
+                    quitarPow();
+                }, 250);
+
+            };
+
+            var sprite_golpe = function(){
+                var fuerza_constante = 15;
+                $('#pinata_mov').fps(fuerza_constante+fuerzaGolpe);
+                fuerzaGolpe +=5;
+
+            };
+
+            var final = function(){
+                $('#pinata_mov').hide();
+                $('#pinata_fin').show();
+
+                enmovimiento = false;
+            };
+
+            function quitarPow(){
+                $('#golpe').hide();
+            }
+
+
         })(jQuery);
+
 
     </script>
 </head>
@@ -85,8 +143,7 @@
     </div>
 
 </div>
-<script src="js/app.js"></script>
-<script src="js/sample.js"></script>
+
 <script src="js/jquery.spritely.js"></script>
 </body>
 </html>
