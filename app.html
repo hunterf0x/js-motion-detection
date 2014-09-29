@@ -25,64 +25,45 @@
 <div id="pinata_mov"></div>
 <div id="pinata_fin"></div>
 <div id="golpe"></div>
+<div id="toy-countdown" class="countdown-center">lala</div>
 <div id="container">
 
     <div id="header">
-        <div class="allow">Click "Allow" above to control stuff just by waving your hands.</div>
-        <div class="instructions">Wave your hands, it's fun.</div>
-        <div class="browsersWithVideo">This demo lets you control stuff using motion detection in your browser. Install
-            <a href="https://www.google.com/landing/chrome/beta/" target="_blank">Chrome Beta</a> to play.
-        </div>
+        <div class="allow">Click "Permitir" para controlar las acciones con tus manos</div>
     </div>
 
     <div id="cuadro_camara">
-
         <video id="webcam" autoplay width="320" height="240"></video>
-
-        <video id="video-demo" controls="controls" poster="videos/jsdetection.jpg" width="320" height="240"
-               onclick="if(/Android/.test(navigator.userAgent))this.play();">
-            <source src="videos/jsdetection.mp4" type="video/mp4"/>
-            <source src="videos/jsdetection.ogg" type="video/ogg"/>
-            <source src="videos/jsdetection.webm" type="video/webm"/>
-            Your browser doesn't support the HTML5 video tag.
-        </video>
 
         <canvas id="canvas-source" width="320" height="240"></canvas>
         <canvas id="canvas-highlights" width="320" height="240"></canvas>
         <canvas id="canvas-blended" width="320" height="240"></canvas>
 
         <div id="hotSpots">
-            <!--<div id="one"></div>-->
-            <div id="another"></div>
-            <!--<a href="http://google.com" class="link" style="right: 6%; bottom: 7%;">Google</a>-->
-            <!--<a href="http://youtube.com" class="link" style="right: 6%; top: 5%; width: 14%"><img
-                    src="http://s.ytimg.com/yt/img/logos/youtube_logo_standard_againstwhite-vflKoO81_.png" width="100%"></a>-->
+            <div id="punto"></div>
         </div>
     </div>
 
     <div class="loading">Loading assets...</div>
 
-    <div class="backFromVideo"><a href="#">Back</a></div>
+
 
     <div class="introduction">
-        <p>This demo lets you control stuff using motion detection in your browser.</p>
-
-        <p>Please allow access to your camera and microphone above.</p>
+        <p>Este demo realiza una detección de movimiento lo que permite interactuar con la cámara e interactura con la web</p>
+        <p>Por favor permite el acceso a tu cámara.</p>
+    </div>
+    <div class="instructions">
+        <p>asdadasdasd <p id="btn_jugar"><a href="#" onclick="javascript:return false;">Jugar</a></p>
     </div>
 
-    <div class="browsers">
-        <p>This demo lets you control stuff using motion detection in your browser.</p>
 
-        <p>Install <a href="https://www.google.com/landing/chrome/beta/" target="_blank">Chrome Beta</a> to play, or <a
-                href="#" id="watchVideo">watch this video</a> to check it out first.</p>
-    </div>
+
+
 
     <div id="footer">
-        <div class="magic">Based on <a href="http://www.soundstep.com/blog/2012/03/22/javascript-motion-detection/"
-                                       target="_blank">Magic Xylophone</a> by <a href="http://www.stinkdigital.com/"
-                                                                                 target="_blank">Stink Digital</a>. Fork
-            this <a href="https://github.com/RonnyO/js-motion-detection" target="_blank">on github</a></div>
+        <div class="magic">Footer - Shackleton</div>
     </div>
+
 
 </div>
 <script src="js/app.js"></script>
