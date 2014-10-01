@@ -10,17 +10,19 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
         $(function(){
-            $(document).on("submit",".frm_codigo",function(e) {
-                e.preventDefault();
-                var frm  = $(this);
-                var input_txt = frm.find('input#codigo');
 
-                if(input_txt.val() == '123'){
 
-                    redirectMouse();
-                }
+            var pin = getURLParameter('pin');
+            if(pin==123)
+                redirectMouse();
+            else
+                $('#login').show();
 
-            });
+            function getURLParameter(name) {
+                return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+            }
+
+
 
             function redirectMouse(){
                 if (screen.width <= 800) {
@@ -34,20 +36,10 @@
 <body>
     <div id="container">
         <h1>HOME</h1>
-        <div id="login">
-            <form name="frm" id="frm" action="#" method="post" class="frm_codigo">
-                <input type="text" name="codigo" id="codigo">
-                <input type="submit" name="enviar" id="btn_enviar" value="enviar">
-            </form>
+        <div id="login" class="hide">
+            error de pin (entrando en la url normal dara bloqueo)
         </div>
-        <div id="game_mode">
-            <div class="webcam hide" >
-                <p> <a href="app.html">Webcam</a></p>
-            </div>
-            <div class="mouse hide" >
-                <p><a href="app_mouse.html">Mouse</a></p>
-            </div>
-        </div>
+
 
     </div>
 </body>
