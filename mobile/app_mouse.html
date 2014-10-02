@@ -14,12 +14,15 @@
         var fuerzaGolpe = 5;
         var max_time = 3;
         var cinterval;
+        var sonido = $('#golpe_sonido');
+        var activo = true;
         (function($) {
 
             $(document).ready(function() {
 
 
                 var btn = document.getElementById('btn_jugar');
+
 
 
                 $('#pinata').sprite({fps: 8, no_of_frames: 8});
@@ -81,22 +84,37 @@
                 $('#pinata').hide();
                 $('#pinata_mov').show();
                 $('#golpe').show();
+                $('#golpe_sonido')[0].play();
+                activo = false;
                 enmovimiento = true;
                 setTimeout(function(){
                     quitarPow();
                 }, 250);
+
+                document.querySelector("#golpe_sonido").addEventListener("ended", readysonido, false);
             };
 
 
             var golpear = function(){
-                cnt_golpes++;
-                sprite_golpe();
-                $('#golpe').show();
-                setTimeout(function(){
-                    quitarPow();
-                }, 250);
+                if(activo) {
+                    cnt_golpes++;
+                    sprite_golpe();
+                    $('#golpe').show();
+                    $('#golpe_sonido')[0].play();
+                    activo = false;
+                    setTimeout(function () {
+                        quitarPow();
+                    }, 250);
+                }
+
+                document.querySelector("#golpe_sonido").addEventListener("ended", readysonido, false);
 
             };
+
+            function readysonido(){
+                activo = true;
+                console.log(activo);
+            }
 
             var sprite_golpe = function(){
                 var fuerza_constante = 15;
@@ -131,7 +149,7 @@
 <div id="golpe"></div>
 <div id="toy-countdown" class="countdown-center">lala</div>
 <div id="container">
-
+    <audio id="golpe_sonido" src="../golpe.mp3" preload="auto"></audio>
     <div id="header">
         <div class="allow">Click "Allow" above to control stuff just by waving your hands.</div>
         <div class="browsersWithVideo">This demo lets you control stuff using motion detection in your browser. Install

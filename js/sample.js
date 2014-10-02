@@ -1,6 +1,8 @@
+
 (function(){
 
     var pow = $('#golpe');
+    var sonido = $('#golpe_sonido');
     var $cnt = 0;
     var $cnt2 = 0;
     var cierre = true;
@@ -10,7 +12,8 @@
     $(window).on('motion', function(ev, data){
         $cnt+=1;
         golpe(data);
-        //console.log(data);
+
+
 
         // console.log('detected motion at', new Date(), 'with data:', data);
         var spot = $(data.spot.el);
@@ -26,6 +29,11 @@
         //console.log('another');
     });
 
+    $('#golpe_sonido').on("ended", readysonido);
+    function readysonido(){
+        cierre = true;
+        console.log('activa');
+    }
 
     function golpe(obj) {
         if (!obj.ready) return false;
@@ -34,7 +42,9 @@
 
         if($cnt>1){
             if(cierre){
+                //.on("ended", yourFunction);
                 pow.show();
+                sonido[0].play();
                 cierre = false;
                 $cnt2 += 1;
             }
@@ -56,8 +66,13 @@
     }
 
     function setGolpeListo(obj) {
+
         obj.ready = true;
-        cierre =  true;
+        //cierre =  false;
         pow.hide();
+
     }
+
+
+
 })();
