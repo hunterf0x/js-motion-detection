@@ -3,6 +3,7 @@
 
     var pow = $('#golpe');
     var sonido = $('#golpe_sonido');
+    var perfect = $('#perfect');
     var $cnt = 0;
     var $cnt2 = 0;
     var cierre = true;
@@ -56,6 +57,7 @@
             }
 
             if($cnt2 >=8 ){
+                perfect[0].play();
                 $('#pinata_mov').hide();
                 $('#pinata_fin').show();
             }

@@ -15,6 +15,7 @@
         var max_time = 3;
         var cinterval;
         var sonido = $('#golpe_sonido');
+        var perfect = $('#perfect');
         var activo = true;
         (function($) {
 
@@ -140,7 +141,7 @@
             var final = function(){
                 $('#pinata_mov').hide();
                 $('#pinata_fin').show();
-
+                $('#perfect')[0].play();
                 enmovimiento = false;
             };
 
@@ -165,6 +166,7 @@
 <div id="toy-countdown" class="countdown-center">lala</div>
 <div id="container">
     <audio id="golpe_sonido" src="golpe.mp3" preload="auto"></audio>
+    <audio id="perfect" src="perfect.mp3" preload="auto"></audio>
     <div id="header">
         <div class="allow">Click "Allow" above to control stuff just by waving your hands.</div>
         <div class="browsersWithVideo">This demo lets you control stuff using motion detection in your browser. Install
